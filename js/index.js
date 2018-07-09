@@ -2,7 +2,7 @@ function getMyProfession() {
     let professionElement = document.getElementById('profession');
     let profession = professionElement.options[professionElement.selectedIndex].text;
     alert(profession);
-} 
+}
 
 function handlePressEvent(e) {
     let message = `You press ${e.key}`;
