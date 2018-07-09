@@ -1,17 +1,52 @@
-<httml>
+<html>
     <head>
         <title>Intro to JavaScript</title>
     </head>
     <body>
-        <h1>Welcome to JavaScript</h1>
-        <h3>We are going to learn the basics of JavaScript in the browser</h3>
+        <h1>Forms</h1>
+        <h3>We are going to manipulate Forms with</h3>
         <hr>
-        <h3> Specially:</h3>
-        <ul>
-            <li>DOM</li>
-            <li>Events</li>
-            <li>Cookies</li>
-            <li>Regular Expressions</li>
-        </ul>
+        <h3>Me:</h3>
+        <form>
+            <label>Name:</label>
+            <input id="name" value="" />
+            <label>Profession:</label>
+            <select id="profession" value="">
+                <option value="1">Backend Developer</option>
+                <option value="2">DevOps Developer</option>
+                <option value="3">Frontend Developer</option>
+            </select>
+        </form>
+        <button onclick="getMyProfession()">What's my profession?</button>
+        <div style="background: red">
+            <p id="like-button">This is not a button, but will do the same as a button</p>
+        </div>
+        <script>
+function getMyProfession() {
+    let professionElement = document.getElementById('profession');
+    let profession = professionElement.options[professionElement.selectedIndex].text;
+    alert(profession);
+} 
+
+function handlePressEvent(e) {
+    let message = `You press ${e.key}`;
+    if (e.shiftKey) {
+        message += ` and the shift key`
+    }
+    if (e.altKey) {
+        message += ` and the alt key`
+    }
+    if (e.ctrlKey) {
+        message += ` and the ctrl key`
+    }
+    if (e.metaKey) {
+        message += ` and the cmd or meta key`
+    }
+    alert(message);
+}
+let likeButton = document.getElementById('like-button');
+likeButton.addEventListener("click", getMyProfession);
+document.addEventListener("keypress", handlePressEvent);
+        </script>
     </body>
-</httml>
+</html>
