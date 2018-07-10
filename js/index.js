@@ -1,25 +1,22 @@
-function getMyProfession() {
-    let professionElement = document.getElementById('profession');
-    let profession = professionElement.options[professionElement.selectedIndex].text;
-    alert(profession);
+const expression = /Juan/gi;
+function runRegExp() {
+    let text = document.getElementById('playground-text').value;
+    console.log(text);
+    if (expression.test(text)) {
+        alert('Found!');
+    } else {
+        alert('Not found!');
+    }
 }
 
-function handlePressEvent(e) {
-    let message = `You press ${e.key}`;
-    if (e.shiftKey) {
-        message += ` and the shift key`
-    }
-    if (e.altKey) {
-        message += ` and the alt key`
-    }
-    if (e.ctrlKey) {
-        message += ` and the ctrl key`
-    }
-    if (e.metaKey) {
-        message += ` and the cmd or meta key`
-    }
-    alert(message);
+let replaceExpression = /Juan/gi;
+function replaceText() {
+    let text = document.getElementById('playground-text').value;
+    let newText = text.replace(replaceExpression, 'Marcel');
+    document.getElementById('playground-text').value = newText;
 }
-let likeButton = document.getElementById('like-button');
-likeButton.addEventListener("click", getMyProfession);
-document.addEventListener("keypress", handlePressEvent);
+
+let runner = document.getElementById('runner');
+let replace = document.getElementById('replace');
+runner.addEventListener('click', runRegExp);
+replace.addEventListener('click', replaceText);
