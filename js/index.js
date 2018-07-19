@@ -1,19 +1,18 @@
-const expression = /Juan/gi;
+const expression = /* Schreibe deinen Namen für den regulären Ausdruck */;
 function runRegExp() {
-    let text = document.getElementById('playground-text').value;
+    let text = /* Greife auf den Element zu, indem es der reguläre Ausdruck laufen soll */
     console.log(text);
-    if (expression.test(text)) {
-        alert('Found!');
-    } else {
-        alert('Not found!');
-    }
+    /*
+        Wenn der reguläre Ausdruck nicht gefunden wurde, zeige den Label
+    */
 }
 
-let replaceExpression = /Juan/gi;
+let replaceExpression = /* Schreibe deinen Namen für den regulären Ausdruck */;
 function replaceText() {
-    let text = document.getElementById('playground-text').value;
-    let newText = text.replace(replaceExpression, 'Marcel');
-    document.getElementById('playground-text').value = newText;
+    let haystack = /* Greife auf den Element zu, indem es der reguläre Ausdruck laufen soll */
+    let replaceWith = /* Greife auf den Element zu, worin der Ersatztext steht */
+    let newText = /* Ersetzte den Text */
+    document.getElementById('playground-text').value = /* Weise den neuen Text zu */
 }
 
 let runner = document.getElementById('runner');
