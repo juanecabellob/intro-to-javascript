@@ -1,21 +1,31 @@
-const expression = /* Schreibe deinen Namen für den regulären Ausdruck */;
-function runRegExp() {
-    let text = /* Greife auf den Element zu, indem es der reguläre Ausdruck laufen soll */
-    console.log(text);
-    /*
-        Wenn der reguläre Ausdruck nicht gefunden wurde, zeige den Label
-    */
+function SaeComponent(id, elementType) {
+    this.id = id;
+    this.elementType = elementType;
+    this.element = null;
 }
 
-let replaceExpression = /* Schreibe deinen Namen für den regulären Ausdruck */;
-function replaceText() {
-    let haystack = /* Greife auf den Element zu, indem es der reguläre Ausdruck laufen soll */
-    let replaceWith = /* Greife auf den Element zu, worin der Ersatztext steht */
-    let newText = /* Ersetzte den Text */
-    document.getElementById('playground-text').value = /* Weise den neuen Text zu */
+SaeComponent.prototype.createElement = function() {
+    this.element = document.createElement(element);
+    this.element.setAttribute('id', this.id);
+    return this.element;
 }
 
-let runner = document.getElementById('runner');
-let replace = document.getElementById('replace');
-runner.addEventListener('click', runRegExp);
-replace.addEventListener('click', replaceText);
+SaeComponent.prototype.getElementValue = function() {
+    if (this.elementType === 'input')  {
+        return this.element.value;
+    }
+
+    return this.element.innerHtml;
+}
+
+SaeComponent.prototype.removeElement = function() {
+    return this.element.parentNode.removeChild(this.element);
+}
+
+SaeComponent.prototype.cloneElement = function(deep) {
+    return this.element.cloneNode(deep);
+}
+
+SaeComponent.prototype.appendToParent = function(parentElement) {
+    return parentElement.appendChild(this.element);
+}
