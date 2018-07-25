@@ -3,19 +3,26 @@
         <title>Intro to JavaScript</title>
     </head>
     <body>
-        <h1>Regular Expressions</h1>
-        <h3>We are going to learn about regular expressions</h3>
+        <h1>Inheritance in JavaScript</h1>
+        <h3>We are going to learn about inheritance</h3>
         <hr>
-        <h3>Regular expressions:</h3>
-        <label>Playground:</label>
-        <input id="playground-text" value=""/>
-        <label id="error" style="color: red; visibility: hidden;">Your input is not found</label>
-        <button id="runner">Run RegExp</button>
-        <label>Finde:</label>
-        <input id="haystack" value="" />
-        <label>Ersetze mit:</label>
-        <input id="replace-with" value="" />
-        <button id="replace">Replace</button>
+        <h2>Message from JavaScript:</h2>
+        <h3 id="messages"></h3>
+        <label>Select the type:</label>
+        <select id="type-selector">
+            <option value="input">Input</option>
+            <option value="h3">h3</option>
+            <option value="label">label</option>
+        </select>
+        <label>Set the id of the new element:</label>
+        <input id="new-element-id" value="" />
+        <button id="new-element-button">New element</button>
+        <label>Add it to:</label>
+        <select id="parent-select">
+            <option value="0"></option>
+            <option value="1"></option>
+            <option value="2"></option>
+        </select>
         <script src="js/index.js"></script>
     </body>
 </html>
