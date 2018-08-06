@@ -1,10 +1,42 @@
 <html>
     <head>
         <title>Intro to JavaScript</title>
+        <style>
+            #components {
+                display: inline-flex;
+            }
+            .component {
+                border: 2px solid black;
+                height: 30px;
+                width: 30px;
+                margin: 0 5px;
+                padding: 15px 0 0 20px;
+            }
+
+            .options {
+                display: none;
+            }
+
+            .options.show {
+                display: block;
+            }
+
+            .parents {
+                display: inline-flex;
+            }
+
+            .parents form {
+                display: block;
+            }
+
+            .parents div {
+                display: block;
+            }
+        </style>
     </head>
     <body>
         <h1>Inheritance in JavaScript</h1>
-        <h3>We are going to learn about inheritance</h3>
+        <h3>We are going to learn about inheritance and DOM manipulation</h3>
         <hr>
         <h2>Message from JavaScript:</h2>
         <h3 id="messages"></h3>
@@ -14,15 +46,40 @@
             <option value="h3">h3</option>
             <option value="label">label</option>
         </select>
-        <label>Set the id of the new element:</label>
-        <input id="new-element-id" value="" />
-        <button id="new-element-button">New element</button>
-        <label>Add it to:</label>
-        <select id="parent-select">
-            <option value="0"></option>
-            <option value="1"></option>
-            <option value="2"></option>
+        <label>Set the value of the component</label> 
+        <input id="new-component-value" value="" />
+        <label>Set the id of the new component:</label>
+        <input id="new-component-id" value="" />
+        <button id="new-component-button">Create new component</button>
+        <br/>
+        <br/>
+        <div id="components">
+
+        </div>
+        <br>
+        <label class="options">Add it to:</label>
+        <select class="options" id="parent-select">
+            <option value="">Select a parent component</option>
+            <option value="parent-form">Form</option>
+            <option value="parent-container">Container</option>
         </select>
+        <button class="options" id="append-to-button">Add to parent</button>
+        <button class="options" id="remove-button">Remove from parent</button>
+        <br>
+    
+        <div id="parents" style="display: inline-flex;">
+            <form id="parent-form" style="padding: 50px">
+                <h1>Form</h1>
+                <br>
+                <br>
+            </form>
+    
+            <div id="parent-container" style="padding: 50px">
+                <h1>Container</h1>
+                <br>
+                <br>
+            </div>
+        </div>
         <script src="js/index.js"></script>
     </body>
 </html>
